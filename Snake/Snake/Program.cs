@@ -14,16 +14,9 @@ namespace Snake
             p.x = 1;
             p.y = 10;
             p.c = '*';
-
-            Draw(p.x, p.y, p.c);
+            p.Draw();
 
             Console.ReadLine();
-        }
-
-        static void Draw(int x, int y, char c)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
         }
     }
 }

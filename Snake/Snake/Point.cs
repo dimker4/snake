@@ -11,5 +11,11 @@ namespace Snake
         public int x;
         public int y;
         public char c;
+
+        public void Draw()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(c);
+        }
     }
 }

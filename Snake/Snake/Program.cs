@@ -10,12 +10,6 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
-
-            Point p2 = new Point(5, 7, '@');
-            p2.Draw();
-
             HorizontalLine topLine = new HorizontalLine(0, 60, 0, '+');
             HorizontalLine botLine = new HorizontalLine(0, 60, 20, '+');
             VerticalLine leftLine = new VerticalLine(0, 0, 20, '+');
@@ -25,6 +19,9 @@ namespace Snake
             botLine.Draw();
             leftLine.Drow();
             RightLine.Drow();
+
+            //Point p1 = new Point(1, 3, '*');
+            //p1.Draw();
 
             Console.ReadLine();
         }

@@ -10,19 +10,30 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            HorizontalLine topLine = new HorizontalLine(0, 60, 0, '+');
+            Console.WriteLine("DIMA BOBROVICH");
+            HorizontalLine topLine = new HorizontalLine(0, 60, 1, '+');
             HorizontalLine botLine = new HorizontalLine(0, 60, 20, '+');
-            VerticalLine leftLine = new VerticalLine(0, 0, 20, '+');
-            VerticalLine RightLine = new VerticalLine(60, 0, 20, '+');
+            VerticalLine leftLine = new VerticalLine(0, 1, 20, '+');
+            VerticalLine RightLine = new VerticalLine(60, 1, 20, '+');
 
-            topLine.Draw();
-            botLine.Draw();
+            topLine.Drow();
+            botLine.Drow();
             leftLine.Drow();
             RightLine.Drow();
 
-            //Point p1 = new Point(1, 3, '*');
-            //p1.Draw();
+            Point p1 = new Point(1, 4, '*');
 
+            Snake snake = new Snake(p1, 4, Direction.RIGHT);
+
+            for (var i = 5; i <= 15; i ++)
+            {
+                Point p2 = new Point(i, 4, '*');
+                snake = new Snake(p2, 4, Direction.RIGHT);
+                snake.Drow();
+                snake.Move();
+                Console.ReadLine();
+            }
+            
             Console.ReadLine();
         }
     }

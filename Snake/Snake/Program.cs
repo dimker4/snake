@@ -27,8 +27,6 @@ namespace Snake
 
             for (var i = 5; i <= 15; i ++)
             {
-                Point p2 = new Point(i, 4, '*');
-                snake = new Snake(p2, 4, Direction.RIGHT);
                 snake.Drow();
                 snake.Move();
                 Console.ReadLine();

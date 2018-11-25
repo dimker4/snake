@@ -17,14 +17,18 @@ namespace Snake
             VerticalLine leftLine = new VerticalLine(0, 1, 20, '+');
             VerticalLine RightLine = new VerticalLine(60, 1, 20, '+');
 
-            topLine.Drow();
-            botLine.Drow();
-            leftLine.Drow();
-            RightLine.Drow();
+            topLine.Draw();
+            botLine.Draw();
+            leftLine.Draw();
+            RightLine.Draw();
 
 
-            Point p1 = new Point(1, 4, 'D');
-            Snake snake = new Snake(p1, 8, Direction.RIGHT);
+            Point p1 = new Point(1, 4, '*');
+            Snake snake = new Snake(p1, 4, Direction.RIGHT);
+            Food f = new Food(60, 20, '@');
+            Point food = f.CreateFood();
+            food.Draw();
+
             var i = 0;
 
             while (true)
@@ -40,11 +44,13 @@ namespace Snake
                 }
                 Thread.Sleep(200);
                 snake.Move(i);
+                if (snake.Eat(food))
+                {
+                    food = f.CreateFood();
+                    food.Draw();
+                }
                 i++;
             }
-            //snake.Drow();
-
-            Console.ReadLine();
         }
     }
 }

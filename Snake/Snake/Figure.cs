@@ -10,7 +10,7 @@ namespace Snake
     {
         protected List<Point> pLine;
 
-        public void Drow()
+        public void Draw()
         {
             foreach (var i in pLine)
             {
